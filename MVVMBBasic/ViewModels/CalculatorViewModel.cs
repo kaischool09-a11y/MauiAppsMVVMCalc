@@ -29,10 +29,11 @@ namespace ViewModels
         }
 
         public ICommand CalculateCommand { get; }
-
+        public ICommand GoHomeCommand { get; }
         public CalculatorViewModel()
         {
             CalculateCommand = new Command<string>(ExecuteCalculate);
+            GoHomeCommand = new Command(async () => await Shell.Current.GoToAsync("//WelcomePage"));
         }
 
         private void ExecuteCalculate(string operation)

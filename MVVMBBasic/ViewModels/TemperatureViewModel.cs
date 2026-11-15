@@ -31,10 +31,11 @@ public class TemperatureViewModel : INotifyPropertyChanged
     }
 
     public ICommand ConvertCommand { get; }
-
+    public ICommand GoHomeCommand { get; }
     public TemperatureViewModel()
     {
         ConvertCommand = new Command(ConvertTemperature);
+        GoHomeCommand = new Command(async () => await Shell.Current.GoToAsync("//WelcomePage"));
     }
 
     private void ConvertTemperature()

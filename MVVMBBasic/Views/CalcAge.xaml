@@ -26,8 +26,8 @@
                FontSize="20" 
                HorizontalOptions="Center" />
 
-        <Button Text="חזרה לדף הבית" 
-             Command="{Binding NavigateToWelcomeCommand}" />
+        <Button  Text="חזרה לדף הבית"
+    Command="{Binding GoHomeCommand}" />
 
     </VerticalStackLayout>
 </ContentPage>

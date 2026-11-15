@@ -8,10 +8,12 @@ namespace ViewModels
     public class CalcAgeViewModel : BaseViewModel
     {
         public ICommand CalculateAgeCommand { get; }
+        public ICommand GoHomeCommand { get; }
         public CalcAgeViewModel()
         {
             Title = "דף חישוב גיל";
             CalculateAgeCommand = new Command(CalculateAge);
+            GoHomeCommand = new Command(async () => await Shell.Current.GoToAsync("//WelcomePage"));
         }
         private string _yearOfBirth = string.Empty;
         private string _result = string.Empty;

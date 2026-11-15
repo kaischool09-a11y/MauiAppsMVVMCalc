@@ -82,8 +82,8 @@
 
         </Border>
 
-        <Button Text="חזרה לדף הבית" 
-             Command="{Binding NavigateToWelcomeCommand}" />
+        <Button  Text="חזרה לדף הבית"
+Command="{Binding GoHomeCommand}" />
     </VerticalStackLayout>
 
 </ContentPage>
