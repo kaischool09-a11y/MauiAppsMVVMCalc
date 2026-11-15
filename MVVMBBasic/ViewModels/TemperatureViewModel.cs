@@ -8,7 +8,7 @@ namespace ViewModels;
 public class TemperatureViewModel : INotifyPropertyChanged
 {
     private string _fahrenheit = "";
-    private string _celsius = "";
+    private string _celsius = ""; 
 
     public string Fahrenheit
     {
