@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:views="clr-namespace:Views"
+              xmlns:vm="clr-namespace:ViewModels"
+             x:DataType="vm:TemperatureViewModel"
+             x:Class="Views.TemperaturePage"
+             Title="TemperaturePage">
+    <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+
+        <!-- חובה לתת x:Name כדי שהקוד האחורי יכיר את הרכיב -->
+        <!-- החלפה ב Binding YearOfBirth -->
+        <Entry Text="{Binding Fahrenheit}" 
+            
+            Keyboard="Numeric" />
+
+        <!-- קישור לאירוע לחיצה קלאסי -->
+        <!--Clicked="OnCalculateAgeClicked"-->
+        <Button Text="חשב טמפרטורה" 
+             Command="{Binding ConvertCommand}" />
+
+        <!-- חובה לתת x:Name כדי שנוכל להזריק פה טקסט -->
+        <!-- החלפה ב Binding Result -->
+        <Label Text="{Binding Celsius}" 
+            FontSize="20" 
+            HorizontalOptions="Center" />
+        
+        
+        <Button Text="חזרה לדף הבית" 
+             Command="{Binding NavigateToWelcomeCommand}" />
+
+    </VerticalStackLayout>
+</ContentPage>

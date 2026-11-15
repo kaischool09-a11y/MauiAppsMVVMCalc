@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:ViewModels"
+    x:Class="Views.CalculatorPage"
+    Title="מחשבון">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CalculatorViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="20"
+        VerticalOptions="Center">
+
+        <Label
+            Text="מחשבון פשוט"
+            FontSize="28"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+        <Entry
+            Placeholder="הכנס מספר ראשון"
+            Text="{Binding Number1}"
+            Keyboard="Numeric"
+            HeightRequest="48" />
+
+        <Entry
+            Placeholder="הכנס מספר שני"
+            Text="{Binding Number2}"
+            Keyboard="Numeric"
+            HeightRequest="48" />
+
+        <Grid
+            ColumnDefinitions="*,*,*,*"
+            ColumnSpacing="10"
+            HeightRequest="50">
+
+            <Button
+                Grid.Column="0"
+                Text="+"
+                Command="{Binding CalculateCommand}"
+                CommandParameter="+"
+                FontSize="20" />
+
+            <Button
+                Grid.Column="1"
+                Text="-"
+                Command="{Binding CalculateCommand}"
+                CommandParameter="-"
+                FontSize="20" />
+
+            <Button
+                Grid.Column="2"
+                Text="*"
+                Command="{Binding CalculateCommand}"
+                CommandParameter="*"
+                FontSize="20" />
+
+            <Button
+                Grid.Column="3"
+                Text="/"
+                Command="{Binding CalculateCommand}"
+                CommandParameter="/"
+                FontSize="20" />
+
+        </Grid>
+
+        <Border
+            BackgroundColor="#f0f0f0"
+            Padding="15"
+            Margin="0,10,0,0">
+
+            <Label
+                Text="{Binding Result}"
+                FontSize="20"
+                HorizontalOptions="Center"
+                TextColor="Black" />
+
+        </Border>
+
+        <Button Text="חזרה לדף הבית" 
+             Command="{Binding NavigateToWelcomeCommand}" />
+    </VerticalStackLayout>
+
+</ContentPage>

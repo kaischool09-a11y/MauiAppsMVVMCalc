@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Views.WelcomePage"  
+    xmlns:vm="clr-namespace:ViewModels"
+    x:DataType="vm:WelcomeViewModel"
+    Title="ברוכים הבאים">
+
+    <VerticalStackLayout
+        Spacing="20"
+        Padding="30"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label
+            Text="ברוכים הבאים לאפליקציית המחשבונים"
+            FontSize="24"
+            HorizontalOptions="Center"
+            FontAttributes="Bold" />
+
+        <Button
+            Text="למחשבון מתמטי"
+            Command="{Binding NavigateToMathCalcCommand}"
+            WidthRequest="200" />
+
+        <Button
+            Text="למחשבון גיל"
+            Command="{Binding NavigateToCalcAgeCommand}"
+            WidthRequest="200" />
+        <Button
+     Text="למחשבון טמפרטורה"
+     Command="{Binding NavigateToConvertCommand}"
+     WidthRequest="200" />
+
+      
+
+    </VerticalStackLayout>
+
+</ContentPage>
